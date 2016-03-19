@@ -14,7 +14,7 @@
         font-size: medium;
         background-color: lightgray;
       }
-      
+
       #rightSide {
         position: fixed;
         padding: 10px;
@@ -24,7 +24,13 @@
         height: 100%;
         background-color: white;
       }
-      
+
+      .emoji {
+        width: 1em;
+        height: 1em;
+        vertical-align: baseline;
+      }
+
       html, body {
         height: 100%;
       }
@@ -36,10 +42,18 @@
   </body>
   <script>
     var marked = require('marked')
+    var emojify = require('emojify.js');
+    emojify.setConfig({
+      'img_dir': 'node_modules/emojify.js/dist/images/basic'
+    });
+
     var input = document.getElementById('leftSide');
     input.addEventListener('keyup', function(e) {
       var renderedData = input.value
-      document.getElementById('rightSide').innerHTML = marked(renderedData);
+      var output = document.getElementById('rightSide');
+      output.innerHTML = marked(renderedData);
+
+      emojify.run(output);
     });
   </script>
 </html>
