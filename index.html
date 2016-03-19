@@ -6,20 +6,23 @@
     <style>
       #leftSide {
         position: fixed;
-        left: 0px;
+        padding: 10px;
         top: 0px;
+        left: 0px;
         width: 50%;
         height: 100%;
-        background-color: red;
+        font-size: medium;
+        background-color: lightgray;
       }
       
       #rightSide {
         position: fixed;
-        right: 0px;
+        padding: 10px;
         top: 0px;
+        right: 0px;
         width: 50%;
         height: 100%;
-        background-color: blue;
+        background-color: white;
       }
       
       html, body {
@@ -28,18 +31,17 @@
     </style>
   </head>
   <body>
-    <!--<h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-    -->
-    <textarea id="leftSide">
-      
-        
-    </textarea>
+    <textarea id="leftSide"></textarea>
     <div id="rightSide">
       right
     </div>
   </body>
-  
+  <script>
+    var input = document.getElementById('leftSide');
+    input.addEventListener('keyup', function(e) {
+
+      var renderedData = input.value
+      document.getElementById('rightSide').innerHTML = renderedData;
+    });
+  </script>
 </html>
