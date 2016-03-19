@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Electron Example!</title>
+    <link rel="stylesheet" href="node_modules/highlight.js/styles/zenburn.css">
     <style>
       #leftSide {
         position: fixed;
@@ -12,7 +13,7 @@
         width: 50%;
         height: 100%;
         font-size: medium;
-        background-color: lightgray;
+        background-color: whitesmoke;
       }
 
       #rightSide {
@@ -22,6 +23,7 @@
         right: 0px;
         width: 50%;
         height: 100%;
+        overflow: auto;
         background-color: white;
       }
 
@@ -30,7 +32,9 @@
         height: 1em;
         vertical-align: baseline;
       }
-
+      code {
+        background-color: whitesmoke;
+      }
       html, body {
         height: 100%;
       }
@@ -43,6 +47,15 @@
   <script>
     var marked = require('marked')
     var emojify = require('emojify.js');
+    var highlight = require('highlight.js')
+
+    marked.setOptions({
+      highlight: function (code) {
+        return highlight.highlightAuto(code).value;
+      },
+      langPrefix:'hljs '
+    });
+
     emojify.setConfig({
       'img_dir': 'node_modules/emojify.js/dist/images/basic'
     });
