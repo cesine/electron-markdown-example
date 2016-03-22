@@ -3,12 +3,45 @@
   <head>
     <meta charset="UTF-8">
     <title>Electron Markdown!</title>
+    <style>
+      #leftSide {
+        position: fixed;
+        padding: 10px;
+        top: 0px;
+        left: 0px;
+        width: 50%;
+        height: 100%;
+        font-size: medium;
+        background-color: whitesmoke;
+      }
+
+      #rightSide {
+        position: fixed;
+        padding: 10px;
+        top: 0px;
+        right: 0px;
+        width: 50%;
+        height: 100%;
+        overflow: auto;
+        background-color: white;
+      }
+
+      html, body {
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
-  	Hello Electron!
+    <textarea id="leftSide"></textarea>
+    <div id="rightSide"></div>
 	<script>
-		var fs = require('fs');
-		document.write('<pre>' + fs.readFileSync('main.js') + '</pre>');
+
+    var input = document.getElementById('leftSide');
+    input.addEventListener('keyup', function(e) {
+      var renderedData = input.value
+      var output = document.getElementById('rightSide');
+      output.innerHTML = renderedData;
+    });
 	</script>
   </body>
 </html>
