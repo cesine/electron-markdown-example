@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron Markdown!</title>
+  </head>
+  <body>
+  	Hello Electron!
+	<script>
+		var fs = require('fs');
+		document.write('<pre>' + fs.readFileSync('main.js') + '</pre>');
+	</script>
+  </body>
+</html>
