@@ -1,71 +1,104 @@
 # Desktop Apps with Javascript
 
----
+----
 
-Why to do it  
 What it is  
+Why to do it  
 Follow up with an example   
 
 ---
 
     > Any application that can be written in JavaScript, will eventually be written in JavaScript. - Jeff Atwood (2007)
 
-* https://github.com/os-js/OS.js
-* https://github.com/1j01/jspaint
-* https://github.com/pypyjs/pypyjs
-* https://github.com/kripken/emscripten
-* https://github.com/atom/electron
-* https://github.com/fglock/Perlito
-
----
-
-## Why do it?
-* cross platform
-* ease of use / common use cases
+* https://github.com/os-js/OS.js  <!-- .element: class="fragment" data-fragment-index="1" -->
+* https://github.com/1j01/jspaint  <!-- .element: class="fragment" data-fragment-index="2" -->
+* https://github.com/pypyjs/pypyjs  <!-- .element: class="fragment" data-fragment-index="3" -->
+* https://github.com/kripken/emscripten  <!-- .element: class="fragment" data-fragment-index="4" -->
+* https://github.com/atom/electron  <!-- .element: class="fragment" data-fragment-index="5" -->
+* https://github.com/fglock/Perlito  <!-- .element: class="fragment" data-fragment-index="6" -->
 
 ---
 
 ## Why desktop apps?
-* can access the file system
-* can access the clipboard
-* can adjust menus
-* can integrate with the os  (open in finder, widgets, notification)
+* can access the file system  <!-- .element: class="fragment" data-fragment-index="1" -->
+* can access the clipboard  <!-- .element: class="fragment" data-fragment-index="2" -->
+* can adjust menus <!-- .element: class="fragment" data-fragment-index="3" -->
+* can integrate with the os  (open in finder, widgets, notification) <!-- .element: class="fragment" data-fragment-index="4" -->
+
+---
+
+## Why Electron?
+* cross platform
+* ease of use / code reuse
+
+Note:
+* In javascript (don’t need to learn native frameworks)
+* but not mobile (yet)
+* node on the frontend
+* fs injection into dom
+* Useful for backend engineers to make meaningful frontends
+
 
 ---
 
 ## Examples of existing apps
 
+![](images/atom.png)    ![](images/vscode.png)
+![](images/postman.png)    ![](images/slack.png)  
+
 ----
 
-## atom
-* the original (atom shell)
+## The original (atom shell) 
+
+![](images/atom-big.png)
 
 ----
 
 ## vs code
+
+![](images/vscode-big.png)
+
+Note:
 * microsoft, open source
-* chose it over their existing well known / popular ide
+* chose it over their existing well known / popular ide  
 
 ----
 
 ## slack
-* started as a native mac app
-* electron on windows and then back ported
-* side by side comparison with web
+
+![](images/slack-big-desktop.png)
+
+Note:
+* started as a native mac app  
+* electron on windows and then back ported  
+* side by side comparison with web  
 
 ----
 
-## Postman
-* started as a chrome app
+## Totally not desktop app
+![](images/slack-big-web.png)
+
+----
+
+## Postman  
+![](images/postman-big.png)
+
+Note:
+* started as a chrome app  
+
 
 ----
 
 ## mojibar
-* Native system tray app to find the :cat:fect emoji
+* Native system tray app to find the perfect emoji  
+
+![](https://cloud.githubusercontent.com/assets/1153134/12583324/7756a38a-c485-11e5-9388-3b5c61743905.gif)
 
 ---
 
 ## What is Electron?
+
+Note:
 * tool for building cross platform native apps with native technology
     * javascript/ html, css
     * electron
@@ -73,25 +106,28 @@ Follow up with an example
 
 ----
 
-Electron is a specific version of node with a specific version of chromium. 
+#### Electron is a specific version of node with a specific version of chromium.  
+  
+  
+  
 * designing only for one browser  
 * access to the dom / chrome dev tools
-access to node libraries  
-* any javascript framework.  (angular react ember)
-* any javascript library.  (hello npm).
+* access to node libraries  
+* any frontend javascript framework.  
+* any backend javascript library.  
 
-Note: combines chromium and node into a single runtime.  
-Note: mac app store  
-Note: native dialogs
+Note:
+* combines chromium and node into a single runtime.  
+* mac app store  
+* native dialogs
+* (angular react ember) node
 
 ----
 
-*Explanation of electron main and renderer*  
+![](images/main-renderer.png)
 
-__diagram__
-
+Note:
 Electron has at least two processes.
-
 The main that handles app lifecycle and then the renderer process.  
 They talk to each other with ipc.  
 There can be multiple renderers (each with its own v8).
@@ -106,23 +142,13 @@ There can be multiple renderers (each with its own v8).
 ## Resources:
 
 Homepage : http://electron.atom.io  
-Source:  
+
+[Slides/Demo Source](https://github.com/jay3686/electron-markdown-example)
 
 
-curve:  
-electron resources: https://github.com/sindresorhus/awesome-electron  
-sample api usage: https://github.com/hokein/electron-sample-apps
+### Examples and sample code:
+* https://github.com/benogle/curve-app
+* https://github.com/sindresorhus/awesome-electron  
+* https://github.com/hokein/electron-sample-apps
 
 ----
-
-misc unorganized notes:
-
-* In javascript (don’t need to learn native frameworks)
-* but not mobile (yet)
-
-
-
-node on the frontend
-fs injection into dom
-
-Useful for backend engineers to make meaningful frontends
