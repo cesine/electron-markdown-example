@@ -1,3 +1,7 @@
+# Electron Markdown Editor Tutorial
+
+---
+
 ## Initialize the Project
 
 ```js
@@ -24,6 +28,7 @@ app.on('ready', function() {
 
 });
 ```
+
 ----
 
 ## Create `index.html`
@@ -57,10 +62,14 @@ mainWindow.on('closed', function() {
 Note:
 *mention dev tools
 hello world!
+
+```
 <script>
 	var fs = require('fs');
 	document.write('<pre>' + fs.readFileSync('main.js') + '</pre>');
 </script>
+```
+
 ---
 
 ## some bare bones
@@ -70,9 +79,10 @@ hello world!
 <textarea id="leftSide"></textarea>
 <div id="rightSide"></div>
 ```
+
 ----
 
-#### Add this to the head of `index.html`
+#### Add some style to the head of `index.html`
 ```css
     <style>
       #leftSide {
@@ -85,7 +95,6 @@ hello world!
         font-size: medium;
         background-color: whitesmoke;
       }
-
       #rightSide {
         position: fixed;
         padding: 10px;
@@ -96,7 +105,6 @@ hello world!
         overflow: auto;
         background-color: white;
       }
-
       html, body {
         height: 100%;
       }
@@ -115,6 +123,21 @@ input.addEventListener('keyup', function(e) {
 	output.innerHTML = renderedData;
 });
 ```
+
+---
+
+## Add markdown support
+```bash
+npm install marked --save
+```
+
+#### In `index.html`
+```js
+var marked = require('marked')
+
+output.innerHTML = marked(renderedData);
+```
+
 
 ---
 Fin
@@ -141,6 +164,13 @@ var menu = Menu.buildFromTemplate([
 			}
 	}])
 	
+localStorage.setItem(title, JSON.stringify(object));
+
+
+getall: function(){
+    
+    Object.keys(localStorage)
+    }
 
 # ipc
 
