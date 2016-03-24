@@ -60,7 +60,7 @@ mainWindow.on('closed', function() {
 ```
 
 Note:
-*mention dev tools
+dev tools
 hello world!
 
 ```
@@ -133,14 +133,50 @@ npm install marked --save
 
 #### In `index.html`
 ```js
-var marked = require('marked')
+var marked = require('marked');
 
 output.innerHTML = marked(renderedData);
 ```
 
+---
+
+## Code Highlighting
+```bash
+npm install highlightjs --save
+```
+
+#### In `index.html`
+```js
+var highlight = require('highlight.js')
+
+marked.setOptions({
+  highlight: function (code) {
+    return highlight.highlightAuto(code).value;
+  },
+  langPrefix:'hljs '
+});
+```
+
+#### Stylesheet:
+```html
+<link rel="stylesheet" href="node_modules/highlight.js/styles/zenburn.css">
+```
+
+#### In Styles:
+```css
+code {
+  background-color: whitesmoke;
+}
+```
 
 ---
-Fin
+
+# Fin
+
+#### Used in demo:
+* https://github.com/chjj/marked
+* http://hassankhan.me/emojify.js/
+* https://highlightjs.org/
 
 ----
 
@@ -178,11 +214,6 @@ var ipc = require('ipc'
 
 
 
-
-#### Used in demo:
-* https://github.com/chjj/marked
-* http://hassankhan.me/emojify.js/
-* https://highlightjs.org/
 
 
 

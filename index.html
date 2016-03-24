@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Electron Markdown Example!</title>
+    <link rel="stylesheet" href="node_modules/highlight.js/styles/zenburn.css">
+
     <style>
       #leftSide {
         position: fixed;
@@ -26,6 +28,10 @@
         background-color: white;
       }
 
+      code {
+        background-color: whitesmoke;
+      }
+
       html, body {
         height: 100%;
       }
@@ -35,7 +41,15 @@
     <textarea id="leftSide"></textarea>
     <div id="rightSide"></div>
 	<script>
-    var marked = require('marked')
+    var marked = require('marked');
+    var highlight = require('highlight.js')
+
+    marked.setOptions({
+      highlight: function (code) {
+        return highlight.highlightAuto(code).value;
+      },
+      langPrefix:'hljs '
+    });
 
     var input = document.getElementById('leftSide');
     input.addEventListener('keyup', function(e) {
