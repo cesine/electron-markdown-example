@@ -6,7 +6,7 @@ What it is
 Why to do it  
 Follow up with an example   
 
----
+----
 
     > Any application that can be written in JavaScript, will eventually be written in JavaScript. - Jeff Atwood (2007)
 

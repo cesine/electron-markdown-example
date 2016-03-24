@@ -179,13 +179,10 @@ var ipc = require('ipc'
 
 
 
-Used in demo:  https://github.com/chjj/marked
-http://hassankhan.me/emojify.js/
-https://highlightjs.org/
-
-
-
-
+#### Used in demo:
+* https://github.com/chjj/marked
+* http://hassankhan.me/emojify.js/
+* https://highlightjs.org/
 
 
 

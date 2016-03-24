@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Electron Markdown!</title>
+    <title>Electron Markdown Example!</title>
     <style>
       #leftSide {
         position: fixed;
@@ -35,12 +35,13 @@
     <textarea id="leftSide"></textarea>
     <div id="rightSide"></div>
 	<script>
+    var marked = require('marked')
 
     var input = document.getElementById('leftSide');
     input.addEventListener('keyup', function(e) {
       var renderedData = input.value
       var output = document.getElementById('rightSide');
-      output.innerHTML = renderedData;
+      output.innerHTML = marked(renderedData);
     });
 	</script>
   </body>
