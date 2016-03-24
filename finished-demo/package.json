@@ -2,10 +2,17 @@
   "name": "electron-markdown",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron main.js"
+    "start": "nw ."
+  },
+  "window": {
+    "resizeable": true,
+    "toolbar": true,
+    "position": "center",
+    "width": 800,
+    "height": 600
   },
   "author": "",
   "license": "ISC",
