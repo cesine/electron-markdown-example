@@ -147,7 +147,7 @@ npm install highlightjs --save
 
 #### In `index.html`
 ```js
-var highlight = require('highlight.js')
+var highlight = require('highlight.js');
 
 marked.setOptions({
   highlight: function (code) {
@@ -157,15 +157,42 @@ marked.setOptions({
 });
 ```
 
-#### Stylesheet:
+#### In Styles:
 ```html
 <link rel="stylesheet" href="node_modules/highlight.js/styles/zenburn.css">
 ```
 
-#### In Styles:
 ```css
 code {
   background-color: whitesmoke;
+}
+```
+
+---
+
+## Emoji support!
+
+```bash
+npm install emojify.js --save
+```
+
+#### In `index.html`
+```js
+var emojify = require('emojify.js');
+emojify.setConfig({
+    'img_dir': 'node_modules/emojify.js/dist/images/basic'
+});
+
+emojify.run(output);
+```
+
+#### In Styles
+
+```css
+.emoji {
+  width: 1em;
+  height: 1em;
+  vertical-align: baseline;
 }
 ```
 
@@ -175,8 +202,8 @@ code {
 
 #### Used in demo:
 * https://github.com/chjj/marked
-* http://hassankhan.me/emojify.js/
 * https://highlightjs.org/
+* http://hassankhan.me/emojify.js/
 
 ----
 

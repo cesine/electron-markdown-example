@@ -28,6 +28,12 @@
         background-color: white;
       }
 
+      .emoji {
+        width: 1em;
+        height: 1em;
+        vertical-align: baseline;
+      }
+
       code {
         background-color: whitesmoke;
       }
@@ -42,7 +48,12 @@
     <div id="rightSide"></div>
 	<script>
     var marked = require('marked');
-    var highlight = require('highlight.js')
+    var highlight = require('highlight.js');
+    var emojify = require('emojify.js');
+
+    emojify.setConfig({
+        'img_dir': 'node_modules/emojify.js/dist/images/basic'
+    });
 
     marked.setOptions({
       highlight: function (code) {
@@ -56,6 +67,7 @@
       var renderedData = input.value
       var output = document.getElementById('rightSide');
       output.innerHTML = marked(renderedData);
+      emojify.run(output);
     });
 	</script>
   </body>
